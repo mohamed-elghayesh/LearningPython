@@ -1,0 +1,16 @@
+Python1:
+    Variables, reserved words
+    Datatypes, conversions str(), int(), float(), assignment vs comparison
+    type(), var.__sizeof__() or sys.getsizeof(125)
+    Arithmetics {* / // % + -} and Logics{not and or} priority
+    output formatting (%s %d %f %.3f) or '{0:.2f}'.format(num)
+    sys.stdout.write("")
+
+Python2:
+    condition if, if-else, if-elif-else
+    counting loops "for"
+    event loops "while"
+    Examples (binary conversion, factorial, prime, sequences)
+
+
+    () -> ** -> * / // % -> + -
