@@ -2,10 +2,10 @@
 # number of iterations is not pre-known
 
 # example1 - print numbers 0-4
-i1=0
-while (i1 <= 4):
-    print(i1)
-    i1+=1
+i1=0  # initialize loop control
+while (i1 <= 4):  # test loop condition
+    print(i1)     # execute the loop body
+    i1+=1  # update loop control
 print()
 
 # example2 - print numbers 1-128 using while-loop
