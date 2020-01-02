@@ -12,5 +12,25 @@ Python2:
     event loops "while"
     Examples (binary conversion, factorial, prime, sequences)
 
-
     () -> ** -> * / // % -> + -
+
+Python3:
+    Lists: composite, mutable, id(), is mutability checks
+    print(mylist), list boundery (avoid overflow), copy list (list2=list1), list2=list1.copy()
+    list methods: list1.append("item"), list1.extend(list2), del list1[2], list1.sort(), list1.reverse(), list1.insert(0,"new item")
+    len(list1), "x" in list1, combine list "+", repeat list "*", pop(), remove(), del(), count(item)
+    zip(list1,list2), passing a list as parameter to a function create a reference to the original list
+
+    Tuples: composite, immutable, same operators as list, different functions due to immutability
+    empty mytuple = (), single item mytuple = (3,), mytuple = (1,2,3,4), mytuple[0] = 12 -> Error.
+    used with string interpolation: print("%s lives in $s at %d floor" %("Ali","Alex",6))
+
+    Dictionaries: composite{immutable keys: any value}, keys are unsorted unique identifiers used to lookup information
+    symbol={"H":"Hydrogen", "He":"Helium"}, symbol["H"] -> "Hydrogen", print("O" in symbol) -> false
+    print(symbol["O"])  -> Error, print(symbol.get("O","not found")), symbol.keys(), symbol.values(), symbol.items()
+    symbol.update({"P":"Phosphorous","S":"Sulfur"}), del symbol["H"], symbol.has_key("P"), 
+
+
+
+
+

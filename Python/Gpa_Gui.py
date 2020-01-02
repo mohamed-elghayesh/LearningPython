@@ -313,7 +313,7 @@ def overall_gpa():
     for i in range(1,16,2):
         for j in range(1,12,2):
             total += float(semester_marks[i][j])
-    gpa_all = total/42
+    gpa_all = total/48
     messagebox.showinfo("Allover GPA","Allover GPA: %2.2f"%gpa_all)
     
     # TODO implement the overall gpa using the global semester_marks

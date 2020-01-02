@@ -5,9 +5,9 @@ people = [["Ahmed", "Ali", 25, 5600],
         ["Mansour","Ramadan",42,8300],
         ["Waheed","Tolba",38,6800]]
 
-print(people[2])
-print(people[2][3])
-print(people[2:-1])
+# print(people[2])
+# print(people[2][3])
+# print(people[2:-1])
 
 # lists allow indexing, concatenation (+), repetition (*),
 # membership (in), length (len()), count(item), slicing ([1:]), pop(i)
