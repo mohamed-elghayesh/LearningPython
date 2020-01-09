@@ -22,3 +22,9 @@ print("Tuple2 id: ", id(Tuple2))
 Dictionary1 = {}
 Dictionary2 = {'name':'Ahmed','age':24}
 Dictionary2['name']
+
+Cars = {"Ferrari":{"cost":12000, "color":"Red"}, 
+        "BMW":{"cost":10000,"color":"Grey"}}
+
+print(Cars["BMW"])
+print(Cars["BMW"]["cost"])

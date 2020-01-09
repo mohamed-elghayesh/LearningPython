@@ -1,6 +1,8 @@
+# Data to be stored and read
 employees = [["Ahmed Mohamed", "IT Engineer", 5000],
              ["Sameh Madbouly", "Sales Manager", 12000],
              ["Abdel Wahab Montaser", "Accountant",8000]]
+
 # write employees to a file
 """ f1 = open("Python\\emp_data.txt","w")
 for emp in employees:
@@ -12,7 +14,7 @@ f1.close() """
 class Employee:
     name = ""
     department = ""
-    salary = 0
+    salary = ""
 
 # read from file to class object
 f2 = open("Python\\emp_data.txt","r")
