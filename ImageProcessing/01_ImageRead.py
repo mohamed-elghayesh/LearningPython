@@ -1,3 +1,4 @@
+# image handeling libraries are PIL, OpenCV, Scikit-image, Matplotlib
 # pip install scikit-image
 from skimage import io
 from skimage.color import rgb2grey
@@ -54,8 +55,14 @@ plt.imshow(grey_image)
 plt.show()
 print("min = %.3f , max = %.3f" %(grey_image.min(), grey_image.max()))
 
+# gray image using lambda
+gray = lambda rgb : np.dot(rgb[... , :3] , [0.299 , 0.587, 0.114]) 
+gray_image = gray(my_image)
+plt.imshow(gray_image)
+plt.show() 
+
 # darkening my_image
-dark_image = grey_image * 0.5
+dark_image = gray_image * 0.5
 plt.imshow(dark_image)
 plt.show()
 print("min = %.3f , max = %.3f" %(dark_image.min(), dark_image.max()))
@@ -66,6 +73,9 @@ plt.imshow(add_result)
 plt.show()
 
 # slicing the red R component my_image[:,:,0]
+# slicing the green G my_image[:,:,1]
+# slicing the blue B my_image[:,:,2]
+# zero_image = np.zeros(pic.shape, dtype="uint8")
 zero_image = my_image * 0
 red_slice = my_image[:,:,0]
 zero_image[:,:,0] = red_slice
@@ -73,5 +83,25 @@ red_image = zero_image
 plt.imshow(red_image)
 plt.show()
 
-# slicing the green G my_image[:,:,1]
-# slicing the blue B my_image[:,:,2]
+# draw colored rows
+edited_image = my_image.copy()
+
+edited_image[100:120,:,0] = 255
+plt.imshow(edited_image)
+plt.show()
+
+edited_image[160:180,:,1] = 255
+plt.imshow(edited_image)
+plt.show()
+
+edited_image[220:240,:,2] = 255
+plt.imshow(edited_image)
+plt.show()
+
+# draw colored boxes
+boxed_image = my_image.copy()
+boxed_image[50:100,50:100,:] = [255,255,255] # white
+boxed_image[100:150,100:150,:] = [255,255,0] # yellow
+boxed_image[150:200,150:200,:] = [0,255,0] # green
+plt.imshow(boxed_image)
+plt.show()
