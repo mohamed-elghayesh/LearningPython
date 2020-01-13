@@ -8,8 +8,8 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 # read and print an image (numpy)
-my_image = io.imread("ImageProcessing/Images/blur.jpg")
-#print(type(my_image))
+my_image = io.imread("ImageProcessing/Images/flower1.jpg")
+# #print(type(my_image))
 #print(my_image)
 plt.imshow(my_image)
 plt.show()
