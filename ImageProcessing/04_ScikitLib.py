@@ -2,7 +2,7 @@
 from skimage import io, img_as_float, img_as_ubyte
 import matplotlib.pyplot as plt
 
-img = io.imread("ImageProcessing/Images/blur.jpg")
+img = io.imread("ImageProcessing/Images/flower1.jpg")
 print(type(img)) # numpy ndarray
 print(img.shape) # tuple of (width,height,channels)
 print(img[0,0,:])
