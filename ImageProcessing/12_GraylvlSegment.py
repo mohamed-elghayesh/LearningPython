@@ -3,7 +3,7 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 from skimage.color import rgb2gray
-from scipy import ndimage
+from scipy import ndimage as nd
 
 # plt read image to return numpy ndarray
 img = plt.imread("ImageProcessing/Images/aeroplane.jpg")
@@ -47,7 +47,7 @@ for i in range(gray_c.shape[0]):
 
 segmented_loc = gray_c.reshape(gray_img.shape[0],gray_img.shape[1])
 plt.title("Segmented local, (nrows, ncols): %s %s" %segmented_loc.shape)
-plt.imshow(segmented_loc, cmap="gray")
+plt.imshow(segmented_loc)
 plt.show()
 """
 plt.imshow(segmented_loc==2,cmap="gray")
@@ -59,3 +59,17 @@ plt.show()
 plt.imshow(segmented_loc==0,cmap="gray")
 plt.show() """
 
+
+# clearning using opening and closing operations
+openned_img = nd.binary_opening(segmented_loc, np.ones((5,5)))
+closed_img = nd.binary_closing(openned_img)
+
+"""
+# same operation in cv2 :)
+# cv2.getStructuringElement(cv2.MORPH_ELLIPSE,(5,5))
+# cv2.getStructuringElement(cv2.MORPH_CROSS,(5,5))
+openned_img = cv2.morphologyEx(segmented_loc, cv2.MORPH_OPEN,cv2.getStructuringElement(cv2.MORPH_RECT,(5,5)))
+closed_img = cv2.morphologyEx(openned_img,cv2.MORPH_CLOSE,cv2.getStructuringElement(cv2.MORPH_RECT,(5,5)))
+"""
+plt.imshow(closed_img)
+plt.show()
