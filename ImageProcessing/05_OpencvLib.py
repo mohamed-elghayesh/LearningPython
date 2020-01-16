@@ -1,5 +1,7 @@
 """
 # pip install opencv-python
+# pip install -U --target="C:\python_path\Lib" opencv-python
+# 
 # very advanced for basic image processing
 # object recognition
 """
@@ -24,3 +26,14 @@ cv2.imshow("Color Image", COLOR_IMG)
 cv2.imshow("Gray Image", GRAY_IMG)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+
+# reading and showing a captured video
+cap = cv2.VideoCapture(0)
+#fourcc = cv2.VideoWriter_fourcc(*'XVID')
+#out = cv2.VideoWriter('output.avi',fourcc,20.0,(640,480))
+while True:
+    ret, frame = cap.read()
+    #out.write(frame)
+    cv2.imshow("Video Test", frame)
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break 
