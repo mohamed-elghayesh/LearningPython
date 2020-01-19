@@ -42,3 +42,9 @@ print(d)
 # inserting an element at index
 d.insert(2,25)
 print(d)
+
+# reversing a list
+a = [1,2,3,4,5]
+b = a[::-1] # ☺
+print(b)
+

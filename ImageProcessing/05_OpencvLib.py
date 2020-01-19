@@ -29,11 +29,24 @@ cv2.destroyAllWindows()
 
 # reading and showing a captured video
 cap = cv2.VideoCapture(0)
+
+# cap.get(i=0-18), width i=3, height i=4, fps i=5
+print(cap.get(3),cap.get(4), cap.get(5))
+
 #fourcc = cv2.VideoWriter_fourcc(*'XVID')
 #out = cv2.VideoWriter('output.avi',fourcc,20.0,(640,480))
 while True:
     ret, frame = cap.read()
+    
+    # convert to gray frame
+    gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
     #out.write(frame)
-    cv2.imshow("Video Test", frame)
+    cv2.imshow("Video Test", gray_frame)
+
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break 
+
+# when every thing closes release the capture
+cap.release()
+cv2.destroyAllWindows()
