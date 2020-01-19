@@ -36,12 +36,12 @@ img2 = cv2.imread("ImageProcessing/Images/hurrah2.jpg")
 imgs = []
 fig = plt.figure()
 
-for i in range(11):
-    dst = cv2.addWeighted(img1,i/10,img2,1-i/10,0)
+for i in range(101):
+    dst = cv2.addWeighted(img1,i/100,img2,1-i/100,0)
     im = plt.imshow(dst, animated=True)
     imgs.append([im]) # im must be read as list to be animated
 
-ani = anim.ArtistAnimation(fig, imgs, 200)
+ani = anim.ArtistAnimation(fig, imgs, 100)
 plt.show()
 
 # To save the animation, use e.g.
@@ -53,3 +53,5 @@ plt.show()
 # from matplotlib.animation import FFMpegWriter
 # writer = FFMpegWriter(fps=15, metadata=dict(artist='Me'), bitrate=1800)
 # ani.save("movie.mp4", writer=writer)
+
+# Bitwise operations
