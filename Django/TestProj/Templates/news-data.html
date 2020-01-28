@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %} News from our Database!! {% endblock %}
+
+{% block h_1 %}News for year {{year}}{% endblock %}
+
+{% block p_1 %}
+    This is the first block paragraph
+{% endblock %}
+
+{% block p_2 %}
+    <!-- {{data}}
+    {% for article in data %}
+        <ul>
+            <li><p>{{article.author}} at {{article.pub_date}} wrote {{article.title}} and said that: {{article.description}}</p></li>
+        </ul>
+    {% endfor %} -->
+
+    {% for article in data %}
+        <h3>{{article.author}}</h3>
+        <h2>{{article.title}}</h2>
+        <p>{{article.description}}</p>
+        <h4>{{article.pub_date}}</h4>
+    {% endfor %}
+    
+
+{% endblock %}
+
+

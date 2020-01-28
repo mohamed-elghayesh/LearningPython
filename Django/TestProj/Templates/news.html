@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %} News News! {% endblock %}
+
+{% block h_1 %}News around the Globe!{% endblock %}
+
+{% block p_1 %}
+    <strong>World News</strong>, We are working around the hour for full and accurate coverage of the news, allover the world. 
+    Our greatest responsibility id to let you know what happens when it happens with no makeup.
+{% endblock %}
+
+{% block p_2 %}
+    <strong>Domestic News</strong>, We are working around the hour for full and accurate coverage of the news, allover the world. 
+    Our greatest responsibility id to let you know what happens when it happens with no makeup.
+
+    <p>{{news_list}}</p>
+    {% for article in news_list %}
+        <ul>
+            <li>{{article}}</li>
+        </ul>
+    {% endfor %}
+
+{% endblock %}

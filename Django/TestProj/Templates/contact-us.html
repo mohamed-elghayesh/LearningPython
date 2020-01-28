@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load mathfilters %}
+
+{% block title %} Contact Us!! {% endblock %}
+
+{% block h_1 %}We love to hear from You :){% endblock %}
+
+{% block p_1 %}
+    <strong>Call Us!</strong>, We are working around the hour for full and accurate coverage of the news, allover the world. 
+    Our greatest responsibility id to let you know what happens when it happens with no makeup.
+{% endblock %}
+
+{% block p_2 %}
+    
+    <strong>Our E-mail</strong>, We are working around the hour for full and accurate coverage of the news, allover the world. 
+    Our greatest responsibility id to let you know what happens when it happens with no makeup.
+
+    {% if my_num > 2000 %}
+        <h3>We have more than 2000 followers Hurrah!!</h3>
+    {% else %}
+        <h3>We need {{ 2000 | sub:1500 }} to reach 2000</h3>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %} Sign Up {% endblock %}
+
+{% block h_1 %}  {% endblock %}
+
+{% block p_1 %} 
+    <h2>Sign Up Form</h2>
+
+    <ul>
+        {% for msg in messages %}
+            <li>
+                <div class="alert alert-{{msg.level_tag}}" role="alert">
+                    {{msg.message}}
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
+
+{% block p_2 %}  
+    <!--<div class="container"> -->
+    <!--    <form action="{% url 'add-user' %}" method="POST"> -->
+    <!--        {% csrf_token %}   for securing POST -->
+    <!--        {{form.as_p}}    form controls each as paragraph -->
+    <!--        <input type="submit" value="Register" class="btn btn-success"> -->
+    <!--    </form> -->
+    <!--</div> -->
+    
+    <div class="container">
+        
+        <form action="{% url 'add-user' %}" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label>Username</label>
+                <!--<input type="text" class="form-control" id="exampleInputUsername1" placeholder="Enter Username">-->
+                {{form.username}}
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <!--<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Password">-->
+                {{form.password}}
+            </div>
+
+            <div class="form-group">
+                <label>Email address</label>
+                <!--<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">-->
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                {{form.email}}
+            </div>
+            
+            <div class="form-group">
+                <label>Phone</label>
+                <!--<input type="text" class="form-control" id="exampleInputPhone1" placeholder="Enter Phone">-->
+                {{form.phone}}
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+
+{% endblock %}

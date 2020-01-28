@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %} Modal Form Home {% endblock %}
+
+{% block h_1 %} Modal Form Registration {% endblock %}
+
+{% block p_1 %} 
+    <div class="container">
+        <form action="{% url 'add-model-form' %}" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label>Username</label>
+                {{modelform.username}}
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                {{modelform.password}}
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                {{modelform.email}}
+            </div>
+
+            <div class="form-group">
+                <label>Phone</label>
+                {{modelform.phone}}
+            </div>
+            
+            <!--{{modelform.as_p}}-->
+            <input type="submit" class="btn btn-success" value="Register"/>
+        </form>
+    </div>
+{% endblock %}
+
+{% block p_2 %}
+
+{% endblock %}

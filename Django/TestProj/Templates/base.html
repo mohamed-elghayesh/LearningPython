@@ -1,0 +1,21 @@
+<!-- 'static' must be lower case -->
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title> {% block title %}{% endblock %} </title>
+        <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+        {% include "nav_bar.html" %}  
+    </head>
+    <body>
+        
+        <h1>{% block h_1 %}{% endblock %}</h1>
+        <p>{% block p_1 %}{% endblock %}</p>
+        <p>{% block p_2 %}{% endblock %}</p>
+            
+    </body>
+</html>
